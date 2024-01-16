@@ -9,7 +9,7 @@ def main(repo_id,lora_path,output_path):
         safety_checker=None
     )
     generator.unet.load_attn_procs(lora_path)
-    generator.unet.save_attn_procs(output_path)
+    generator.unet.save_attn_procs(output_path, safe_serialization=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
